@@ -1,11 +1,19 @@
 <script lang="ts">
-  import { rndDate } from "$lib";
   import { onMount } from "svelte";
+  import dayjs from "dayjs";
+
+  const randomDate = () => {
+    const start = dayjs(0);
+    const end = dayjs();
+    const diff = end.diff(start, "second");
+    const random = Math.floor(Math.random() * diff);
+    return start.add(random, "second");
+  };
 
   export let timestamp: number = 0;
 
   onMount(() => {
-    timestamp = rndDate()[1];
+    timestamp = randomDate().unix();
   });
 </script>
 
@@ -18,7 +26,7 @@
 <div class="flex items-center justify-center mt-10">
   <div class="block max-w-sm px-3 p-6 border rounded-lg shadow bg-gray-800 border-gray-700">
     {#if timestamp !== 0}
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">{new Date(timestamp).toLocaleString()}</h5>
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">{new Date(timestamp * 1000).toLocaleString()}</h5>
       <div class="flex items-center mb-3">
         <span class="mr-2 text-sm text-gray-400">Timestamp (click to copy):</span>
         <!-- svelte-ignore a11y-click-events-have-key-events -->
