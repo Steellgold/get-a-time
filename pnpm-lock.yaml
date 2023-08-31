@@ -8,9 +8,6 @@ dependencies:
   dayjs:
     specifier: ^1.11.9
     version: 1.11.9
-  dayjs-random:
-    specifier: ^1.0.1
-    version: 1.0.1
 
 devDependencies:
   '@sveltejs/adapter-auto':
@@ -558,10 +555,6 @@ packages:
     engines: {node: '>=4'}
     hasBin: true
     dev: true
-
-  /dayjs-random@1.0.1:
-    resolution: {integrity: sha512-J6PL4LRnXgah/FPOXGeeePYShyRH779MzaNYKc70J/7tU0I35F1OBV5alke972zZ70grO9SZpASkhUHyHl/qZA==}
-    dev: false
 
   /dayjs@1.11.9:
     resolution: {integrity: sha512-QvzAURSbQ0pKdIye2txOzNaHmxtUBXerpY0FJsFXUMKbIZeFm5ht1LS/jFsrncjnmtv8HsG0W2g6c0zUjZWmpA==}
